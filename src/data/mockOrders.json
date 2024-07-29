@@ -1,0 +1,23 @@
+[
+    {
+        "id": "ORD001",
+        "orderDate": "2024-07-02T20:45:00Z",
+        "customerName": "Jane Smith",
+        "attributedStaffName": "Bob Brown",
+        "total": 250.00,
+        "items": [
+          { "productName": "Product A", "productPrice": 100 },
+          { "productName": "Product B", "productPrice": 150 }
+        ]
+      },
+      {
+        "id": "ORD002",
+        "orderDate": "2024-07-05T10:00:00Z",
+        "customerName": "John Doe",
+        "attributedStaffName": "Alice Green",
+        "total": 80.00,
+        "items": [
+          { "productName": "Product C", "productPrice": 90 }
+        ]
+      }
+]
