@@ -43,7 +43,10 @@ export async function fetchAndStoreOrders(): Promise<void> {
 
 export async function getOrdersAndCommissions() {
   try {
+    // fetch shopify data and store in the db
     await fetchAndStoreOrders();
+
+    // get order data from the database
     const orders = await OrderModel.find({}, {
       id: 1,
       orderDate: 1,

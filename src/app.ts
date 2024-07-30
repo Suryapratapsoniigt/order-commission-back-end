@@ -16,11 +16,9 @@ function appInstance(){
         res.send('Hello world!')
     })
 
-
     // Routes
     app.use('/api/orders', orderRoutes);
     
-
     return app
 }
 

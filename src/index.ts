@@ -7,16 +7,14 @@ import { startCronJob } from './utils/cronJob';
 // configure environment
 dotenv.config()
 
-
 // start server
 async function startServer(){
     try {
-
         // Make connection with database
         await dbConnection();
 
+        // start cron job
         startCronJob();
-
         // call app instance to start the server
         appInstance().listen(environments.PORT, () =>{
             console.log(`Server is running on http://localhost:${environments.PORT}`)
@@ -26,6 +24,5 @@ async function startServer(){
         process.exit(1)
     }
 }
-
 startServer()
 

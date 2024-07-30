@@ -1,12 +1,13 @@
 import { Request, Response } from 'express';
 import { fetchAndStoreOrders, getOrdersAndCommissions } from '../services/shopifyServices';
 
+// get order commission data
 export const getCommissions = async (req: Request, res: Response): Promise<void> => {
     try {        
         const data = await getOrdersAndCommissions();
         res.json({
             success: true,
-            message: '',
+            message: 'Order data fetched successfully!',
             data: data
         });
     } catch (error) {
