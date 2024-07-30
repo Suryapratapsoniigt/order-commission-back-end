@@ -12,4 +12,4 @@ export interface Order extends Document {
     total: number,
     items: Item[];
     commissionInDollars: number;
-  }
+}

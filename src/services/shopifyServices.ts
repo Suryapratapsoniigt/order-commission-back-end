@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import OrderModel from '../models/order';
-import { calculateCommission } from './commissionService';
+import { calculateCommission } from './commission/commissionCalculator';
 import { Order } from '../types/common.type';
 
 // Path to the mock data file
@@ -17,9 +17,10 @@ export async function fetchAndStoreOrders(): Promise<void> {
     for (const order of orders) {
       var orderId = order.id;
 
-      const ordersIsExist = await OrderModel.findOne({id: orderId} );
+      // check order is exist or not
+      const orderIsExist = await OrderModel.findOne({id: orderId} );
 
-      if (ordersIsExist) {
+      if (orderIsExist) {
         await OrderModel.findOneAndUpdate(
           { id: order.id },
           { ...order }
